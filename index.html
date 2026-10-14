@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>奶蛙药科大学 · 玩梗站点</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    background: #f6f2e9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 16px 48px;
+    font-family: "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+    color: #1c1c1c;
+  }
+  .topbar {
+    background: #141414;
+    color: #f3f3f3;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border-radius: 999px;
+    padding: 10px 22px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 26px;
+    max-width: 640px;
+    width: 100%;
+    justify-content: center;
+  }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #f5c518;
+    flex-shrink: 0;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 14px;
+    max-width: 640px;
+    width: 100%;
+    padding: 56px 40px 40px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  }
+  .stamp {
+    position: absolute;
+    top: 26px; right: 28px;
+    width: 76px; height: 76px;
+    border: 2.5px solid #b23b3b;
+    border-radius: 50%;
+    color: #b23b3b;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+    transform: rotate(-14deg);
+    opacity: .85;
+  }
+  .logo {
+    width: 240px;
+    height: 240px;
+    object-fit: contain;
+    margin: 12px auto 26px;
+    display: block;
+  }
+  h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 6px;
+  }
+  .en {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: #9a9a9a;
+    text-transform: uppercase;
+  }
+  .desc {
+    margin: 30px auto 0;
+    max-width: 460px;
+    font-size: 15.5px;
+    line-height: 2;
+    color: #4a4a4a;
+  }
+  .divider {
+    margin: 30px auto;
+    max-width: 480px;
+    border-top: 1px dashed #ddd;
+  }
+  .count-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: left;
+  }
+  .count-circle {
+    width: 58px; height: 58px;
+    border: 3px solid #f5c518;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .count-text { font-size: 15px; color: #333; }
+  .count-text .url { font-weight: 700; color: #1c1c1c; margin-top: 4px; }
+  .progress {
+    margin: 22px auto 34px;
+    max-width: 480px;
+    height: 6px;
+    border-radius: 3px;
+    background: #fdeec9;
+    overflow: hidden;
+  }
+  .progress > div {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #f5c518, #f0a500);
+    transition: width 1s linear;
+  }
+  .btn {
+    display: block;
+    max-width: 480px;
+    margin: 0 auto;
+    background: #141414;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 17px 0;
+    border-radius: 10px;
+    transition: opacity .2s;
+  }
+  .btn:hover { opacity: .88; }
+  @media (max-width: 480px) {
+    h1 { font-size: 32px; }
+    .logo { width: 190px; height: 190px; }
+    .card { padding: 44px 22px 32px; }
+    .stamp { width: 64px; height: 64px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <span class="dot"></span>
+    <span>玩梗站点 · 非官方 · 本站将在 5 秒后送你去真·官网</span>
+  </div>
+
+  <div class="card">
+    <div class="stamp"><span>非官方</span><span>玩梗</span></div>
+
+    <img class="logo" src="naiwa_syphu_logo.png" alt="奶蛙药科大学校徽">
+
+    <h1>奶蛙药科大学</h1>
+    <div class="en">SHENYANG MILKFROG PHARMACEUTICAL UNIVERSITY</div>
+
+    <p class="desc">
+      流动奶蛙已抵达本校。它不说话、不解释、不眨眼，
+      只是在校园的某个角落安静地立着，等你绷不住。
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="count-row">
+      <div class="count-circle" id="count">5</div>
+      <div class="count-text">
+        <div>秒后自动中转至</div>
+        <div class="url">www.syphu.edu.cn</div>
+      </div>
+    </div>
+
+    <div class="progress"><div id="bar"></div></div>
+
+    <a class="btn" href="https://www.syphu.edu.cn">不装了，直接进官网 →</a>
+  </div>
+
+<script>
+  var total = 5, left = total;
+  var countEl = document.getElementById('count');
+  var barEl = document.getElementById('bar');
+  function tick() {
+    left--;
+    countEl.textContent = left;
+    barEl.style.width = ((total - left) / total * 100) + '%';
+    if (left <= 0) {
+      window.location.href = 'https://www.syphu.edu.cn';
+    }
+  }
+  setInterval(function(){ if (left > 0) tick(); }, 1000);
+</script>
+</body>
+</html>
